@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120" role="img" aria-label="Privacy Key">
+  <title>Privacy Key — Wordmark</title>
+  <defs>
+    <linearGradient id="keyGrad" gradientUnits="userSpaceOnUse" x1="0" y1="20" x2="0" y2="110">
+      <stop offset="0%" stop-color="#30D158"/>
+      <stop offset="60%" stop-color="#30D158"/>
+      <stop offset="100%" stop-color="#166534"/>
+    </linearGradient>
+  </defs>
+<text x="0" y="90" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="96" letter-spacing="-4" fill="#0F172A">Privacy <tspan fill="url(#keyGrad)">Key</tspan></text>
+</svg>

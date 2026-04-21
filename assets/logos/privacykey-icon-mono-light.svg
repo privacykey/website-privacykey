@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Privacy Key">
+  <title>Privacy Key — Icon (Mono on light)</title>
+  <rect width="256" height="256" rx="60" ry="60" fill="#0F172A"/>
+  <circle cx="82" cy="128" r="36" fill="#F1F5F9"/>
+  <circle cx="82" cy="128" r="13" fill="#0F172A"/>
+  <path d="M 115 117 L 226 117 L 226 135 L 216 135 L 216 152 L 204 152 L 204 135 L 192 135 L 192 165 L 180 165 L 180 135 L 168 135 L 168 148 L 156 148 L 156 135 L 115 135 Z" fill="#F1F5F9"/>
+</svg>
