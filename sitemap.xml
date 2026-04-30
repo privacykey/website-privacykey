@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  privacykey — sitemap.xml
+
+  One entry per page. The root /index.html is omitted (it's a no-index
+  language redirect). hreflang relationships are declared inside each
+  per-locale page via <link rel="alternate">, so we don't repeat them
+  here — keeping this file something a human can scan in 5 seconds.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://privacykey.org/en/</loc></url>
+  <url><loc>https://privacykey.org/zh/</loc></url>
+  <url><loc>https://privacykey.org/el/</loc></url>
+  <url><loc>https://privacykey.org/privacy.html</loc></url>
+  <url><loc>https://privacykey.org/open.html</loc></url>
+  <url><loc>https://privacykey.org/legal.html</loc></url>
+</urlset>

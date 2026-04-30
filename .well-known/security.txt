@@ -1,0 +1,39 @@
+# privacykey — Security disclosure policy
+# RFC 9116 — https://www.rfc-editor.org/rfc/rfc9116
+# Last updated: 2026-04-26
+
+# privacykey is the organisation. Vulnerabilities in a specific tool
+# (e.g. privacytracker) should be reported via that tool's own
+# Private Vulnerability Reporting page, listed below. Issues with
+# this website itself can use the org-wide channels.
+
+# Preferred channel for org-wide reports: GitHub Private Vulnerability
+# Reporting on the .github repo.
+Contact: https://github.com/privacykey/.github/security/advisories/new
+
+# Per-product Private Vulnerability Reporting (use these for issues in
+# a specific tool, not the organisation site):
+Contact: https://github.com/privacykey/privacytracker/security/advisories/new
+
+# Encrypted email fallback. Plaintext security reports are NOT accepted —
+# see the policy URL below for the PGP key fingerprint.
+Contact: mailto:security@privacykey.org
+
+# Full disclosure policy, scope, safe-harbor terms, and what to include
+# in a report — please read this before submitting.
+Policy: https://github.com/privacykey/.github/blob/main/SECURITY.md
+
+# Researchers who reported confirmed issues are credited in the
+# "Hall of fame" section of the per-product policy and on the
+# corresponding GitHub advisory.
+Acknowledgments: https://github.com/privacykey/.github/blob/main/SECURITY.md#hall-of-fame
+
+# Canonical location for this file
+Canonical: https://privacykey.org/.well-known/security.txt
+
+# Languages we can respond in
+Preferred-Languages: en
+
+# Expires one year from "Last updated" — refresh annually. RFC 9116
+# requires this; clients (and bug-bounty platforms) reject expired files.
+Expires: 2027-04-26T00:00:00Z

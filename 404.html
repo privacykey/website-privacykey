@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+
+  <!-- Same CSP-style headers we ship on the language pages so the 404
+       behaves like the rest of the site even though it lives at the root. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; img-src 'self' data: https://queue.simpleanalyticscdn.com; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://scripts.simpleanalyticscdn.com; connect-src 'self' https://queue.simpleanalyticscdn.com; object-src 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <title>404 — privacykey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#111118" media="(prefers-color-scheme: dark)" />
+  <meta name="color-scheme" content="light dark" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/privacykey-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/privacykey-180.png" />
+
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+
+  <style>
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #475569;
+      --surface: #FFFFFF;
+      --green: #30D158;
+      --green-deep: #166534;
+      --green-deeper: #14532D;
+      --hero-from: #FFFFFF;
+      --hero-to: #F8FAFC;
+      --line-strong: #CBD5E1;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #E6EDF5;
+        --slate: #CBD5E1;
+        --muted: #9AA7B8;
+        --surface: #1A1A22;
+        --green-deep: #30D158;
+        --hero-from: #14141C;
+        --hero-to: #111118;
+        --line-strong: #3A3A44;
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { color-scheme: light dark; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 480px at 80% -10%, rgba(48,209,88,0.12), transparent 60%),
+        radial-gradient(700px 420px at -10% 20%, rgba(30,58,138,0.06), transparent 60%),
+        linear-gradient(180deg, var(--hero-from) 0%, var(--hero-to) 100%);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      max-width: 540px;
+      text-align: center;
+    }
+    .mark {
+      width: 88px; height: 88px; margin: 0 auto 28px;
+      border-radius: 22px;
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      display: grid; place-items: center;
+      box-shadow: 0 12px 30px -12px rgba(15, 23, 42, 0.18);
+    }
+    .mark img { width: 60%; height: auto; }
+    .code {
+      font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 14px;
+      letter-spacing: 0.18em;
+      color: var(--green-deep);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(28px, 5vw, 44px);
+      letter-spacing: -1.0px;
+      line-height: 1.1;
+      margin: 0 0 16px;
+    }
+    .accent {
+      background-image: linear-gradient(180deg, #30D158 0%, #30D158 60%, #166534 100%);
+      -webkit-background-clip: text;
+              background-clip: text;
+      -webkit-text-fill-color: transparent;
+              color: transparent;
+    }
+    p {
+      color: var(--slate);
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 28px;
+    }
+    .actions {
+      display: inline-flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    }
+    a.btn {
+      display: inline-flex; align-items: center;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 700; font-size: 14px;
+      min-height: 44px;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    a.btn:hover { transform: translateY(-1px); }
+    a.btn-primary {
+      background: var(--green-deep); color: #fff;
+      border-color: var(--green-deeper);
+    }
+    a.btn-primary:hover { background: var(--green-deeper); }
+    @media (prefers-color-scheme: dark) {
+      a.btn-primary {
+        background: var(--green); color: #111118;
+        border-color: #BBF7D0;
+      }
+    }
+    a.btn-ghost {
+      background: transparent; color: var(--ink);
+      border-color: var(--line-strong);
+    }
+    a.btn-ghost:hover { border-color: var(--ink); }
+    :focus-visible { outline: 3px solid var(--green-deep); outline-offset: 3px; border-radius: 6px; }
+  </style>
+
+  <script>
+    // Best-effort locale redirect for typo'd or stale links — prefer the
+    // visitor's language so the 404 reads in their tongue when possible.
+    // Only attempts known locales; otherwise falls through to this English page.
+    (function () {
+      try {
+        var supported = ['en', 'zh', 'el'];
+        var raw = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        var primary = String(raw).toLowerCase().split('-')[0];
+        var pick = (raw && raw.toLowerCase().indexOf('zh') === 0) ? 'zh'
+                 : (supported.indexOf(primary) !== -1) ? primary
+                 : null;
+        // Only auto-redirect to /xx/ when the user's language is non-English;
+        // English visitors stay here so the brand 404 always feels intentional.
+        if (pick && pick !== 'en' && location.pathname !== '/' + pick + '/') {
+          // Don't replace history — they typed a URL; keep their option to back.
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <main>
+    <div class="mark" aria-hidden="true">
+      <img src="assets/logos/privacykey-icon-green.svg" alt="" />
+    </div>
+    <div class="code">404 · not found</div>
+    <h1>This page <span class="accent">isn't here.</span></h1>
+    <p>The link is broken, the page moved, or it was never here. The privacykey site is small enough that the home page will probably get you where you need to be.</p>
+    <div class="actions">
+      <a href="/" class="btn btn-primary">Back to privacykey</a>
+      <a href="https://github.com/privacykey" rel="noopener" class="btn btn-ghost">Browse on GitHub</a>
+    </div>
+  </main>
+
+  <!-- 404 hits flow into the public Simple Analytics dashboard at /open
+       so broken links surface as "Not found" entries we can fix. -->
+  <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+</body>
+</html>

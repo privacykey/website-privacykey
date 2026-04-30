@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Privacy Key">
-  <title>Privacy Key — Icon (Mono on light)</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="privacykey">
+  <title>privacykey — Icon (Mono on light)</title>
   <rect width="256" height="256" rx="60" ry="60" fill="#0F172A"/>
   <circle cx="82" cy="128" r="36" fill="#F1F5F9"/>
   <circle cx="82" cy="128" r="13" fill="#0F172A"/>

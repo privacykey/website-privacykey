@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="900" height="220" role="img" aria-label="Privacy Key">
-  <title>Privacy Key — Horizontal lockup</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="900" height="220" role="img" aria-label="privacykey">
+  <title>privacykey — Horizontal lockup</title>
   <defs>
     <linearGradient id="keyGrad" gradientUnits="userSpaceOnUse" x1="0" y1="73" x2="0" y2="160">
       <stop offset="0%" stop-color="#30D158"/>
@@ -237,5 +237,5 @@
   <circle cx="82" cy="128" r="13" fill="#111118"/>
   <path d="M 115 117 L 226 117 L 226 135 L 216 135 L 216 152 L 204 152 L 204 135 L 192 135 L 192 165 L 180 165 L 180 135 L 168 135 L 168 148 L 156 148 L 156 135 L 115 135 Z" fill="#30D158"/>
   </g>
-  <text x="225" y="140" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="88" letter-spacing="-3.5" fill="#0F172A">Privacy <tspan fill="url(#keyGrad)">Key</tspan></text>
+  <text x="225" y="140" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="88" letter-spacing="-3.5" fill="#0F172A">privacy<tspan fill="url(#keyGrad)">key</tspan></text>
 </svg>

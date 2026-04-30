@@ -1,0 +1,17 @@
+{
+  "name": "privacykey",
+  "short_name": "privacykey",
+  "description": "The umbrella brand for a family of open tools that help people understand, protect, and take control of their personal data.",
+  "start_url": "/en/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "lang": "en",
+  "icons": [
+    { "src": "assets/icons/privacykey-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/privacykey-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/privacykey-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="privacykey — your privacy, your control.">
+  <defs>
+    <linearGradient id="keyGrad" gradientUnits="userSpaceOnUse" x1="0" y1="290" x2="0" y2="380">
+      <stop offset="0%" stop-color="#30D158"/>
+      <stop offset="60%" stop-color="#30D158"/>
+      <stop offset="100%" stop-color="#166534"/>
+    </linearGradient>
+    <radialGradient id="bgGlow" cx="50%" cy="42%" r="70%">
+      <stop offset="0%" stop-color="#30D158" stop-opacity="0.12"/>
+      <stop offset="60%" stop-color="#0a0a18" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0a0a18" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Backdrop + soft glow -->
+  <rect width="1200" height="630" fill="#0a0a18"/>
+  <rect width="1200" height="630" fill="url(#bgGlow)"/>
+
+  <!-- Icon: dark squircle with the privacykey key glyph. Coords inside
+       the group are the lockup's native 256×256 system, scaled to 200×200. -->
+  <g transform="translate(240, 215) scale(0.7812)">
+    <rect width="256" height="256" rx="60" ry="60" fill="#1a1a2e"/>
+    <!-- Key bow -->
+    <circle cx="82" cy="128" r="36" fill="#30D158"/>
+    <circle cx="82" cy="128" r="13" fill="#1a1a2e"/>
+    <!-- Key shaft + teeth -->
+    <path d="M 115 117 L 226 117 L 226 135 L 216 135 L 216 152 L 204 152 L 204 135 L 192 135 L 192 165 L 180 165 L 180 135 L 168 135 L 168 148 L 156 148 L 156 135 L 115 135 Z"
+          fill="#30D158"/>
+  </g>
+
+  <!-- Wordmark: lowercase "privacykey", "key" carries the green gradient. -->
+  <text x="480" y="358"
+        font-family="Inter, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif"
+        font-weight="700" font-size="118" letter-spacing="-4" fill="#E6EDF5">privacy<tspan fill="url(#keyGrad)">key</tspan></text>
+
+  <!-- Tagline + domain -->
+  <text x="600" y="465" text-anchor="middle"
+        font-family="Inter, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif"
+        font-weight="500" font-size="32" fill="#C7D2DC" letter-spacing="0.3">Your privacy, your control.</text>
+  <text x="600" y="525" text-anchor="middle"
+        font-family="ui-monospace, 'JetBrains Mono', 'Menlo', monospace"
+        font-weight="500" font-size="20" fill="#5A7184" letter-spacing="3">privacykey.org</text>
+</svg>

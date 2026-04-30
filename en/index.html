@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <!-- Progressive enhancement — swap the html class as soon as JS runs.
+       Stylesheet uses .no-js to hide decorative rain canvases when JS is
+       disabled (or hasn't loaded yet), so the page never shows empty
+       canvas placeholders. Done before any CSS so there's no flash. -->
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; img-src 'self' data: https://queue.simpleanalyticscdn.com; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://scripts.simpleanalyticscdn.com; connect-src 'self' https://queue.simpleanalyticscdn.com; object-src 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>privacykey — Your privacy, your control.</title>
+  <meta name="description" content="An organisation developing open-source tools that help people understand, protect, and take control of their personal data." />
+  <meta name="application-name" content="privacykey" />
+  <meta name="keywords" content="privacy, open source, privacy tools, personal data, privacy app, data protection, iOS privacy, App Store privacy labels, privacytracker, macOS forensics, app permission auditor, privacycommand" />
+  <meta name="author" content="privacykey" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="googlebot" content="index, follow" />
+  <!-- Theme colour — matches the active scheme so iOS Safari's
+       status bar and Android's chrome bar stay consistent. -->
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#111118" media="(prefers-color-scheme: dark)" />
+  <!-- Tells browsers to render native UI (scrollbars, form controls, etc.)
+       in the matching scheme — pairs with the theme-color tags above. -->
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- Canonical + hreflang. Absolute URLs so social cards and search
+       crawlers don't have to resolve relative paths. -->
+  <link rel="canonical" href="https://privacykey.org/en/" />
+  <link rel="alternate" hreflang="en" href="https://privacykey.org/en/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://privacykey.org/zh/" />
+  <link rel="alternate" hreflang="el" href="https://privacykey.org/el/" />
+  <link rel="alternate" hreflang="x-default" href="https://privacykey.org/en/" />
+
+  <!-- ─────────────────────────────────────────────────────────
+       Favicon family + PWA install — covers browsers, Android,
+       iOS, Windows tile, and add-to-home-screen.
+       ───────────────────────────────────────────────────────── -->
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/privacykey-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/icons/privacykey-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/privacykey-180.png" />
+  <link rel="apple-touch-icon" sizes="256x256" href="../assets/icons/privacykey-256.png" />
+  <link rel="mask-icon" href="../assets/logos/privacykey-icon-mono-light.svg" color="#30D158" />
+  <link rel="manifest" href="../site.webmanifest" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="privacykey" />
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="../assets/icons/privacykey-256.png" />
+
+  <!-- ─────────────────────────────────────────────────────────
+       Open Graph (Facebook, LinkedIn, iMessage, Slack, Discord).
+       og:image is the 1200×630 social card at assets/social/og-image.png
+       (logo + "privacykey" wordmark on brand-dark). Regenerate via the
+       Pillow snippet in CONTRIBUTING — keeps it in lockstep if the
+       brand colours move.
+       ───────────────────────────────────────────────────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="privacykey" />
+  <meta property="og:title" content="privacykey — Your privacy, your control." />
+  <meta property="og:description" content="A collection of open source tools that help you see what apps do with your data — and give you the controls to push back." />
+  <meta property="og:url" content="https://privacykey.org/en/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_Hans" />
+  <meta property="og:locale:alternate" content="el" />
+  <!-- PNG first — most compatible across social platforms (Facebook,
+       LinkedIn, iMessage). WebP added as a secondary declaration so
+       crawlers that prefer the smaller format can pick it up. -->
+  <meta property="og:image" content="https://privacykey.org/assets/social/og-image.png" />
+  <meta property="og:image:secure_url" content="https://privacykey.org/assets/social/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="The privacykey logo — a green key icon — alongside the wordmark 'privacykey'." />
+  <meta property="og:image" content="https://privacykey.org/assets/social/og-image.webp" />
+  <meta property="og:image:type" content="image/webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- ─────────────────────────────────────────────────────────
+       Twitter / X card
+       ───────────────────────────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="privacykey — Your privacy, your control." />
+  <meta name="twitter:description" content="A collection of open source tools that help you see what apps do with your data — and give you the controls to push back." />
+  <meta name="twitter:image" content="https://privacykey.org/assets/social/og-image.png" />
+  <meta name="twitter:image:alt" content="The privacykey logo — a green key icon — alongside the wordmark 'privacykey'." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "privacykey",
+    "alternateName": "privacykey",
+    "url": "https://privacykey.org/",
+    "logo": "https://privacykey.org/assets/icons/privacykey-512.png",
+    "image": "https://privacykey.org/assets/icons/privacykey-1024.png",
+    "description": "An organisation developing open-source tools that help people understand, protect, and take control of their personal data.",
+    "sameAs": [
+      "https://github.com/privacykey"
+    ],
+    "subOrganization": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "privacycommand",
+        "applicationCategory": "SecurityApplication",
+        "applicationSubCategory": "Forensics",
+        "operatingSystem": "macOS 13+",
+        "url": "https://privacycommand.privacykey.org/",
+        "downloadUrl": "https://github.com/privacykey/privacycommand/releases/latest",
+        "license": "https://opensource.org/license/mit/",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ─────────────────────────────────────────────────────────
+       AI / LLM crawl etiquette
+       - robots.txt blocks training-data crawlers, allows on-demand
+         agents that cite their sources.
+       - llms.txt is a markdown summary of the site (per llmstxt.org)
+         so cooperating agents don't have to scrape this HTML.
+       ───────────────────────────────────────────────────────── -->
+  <link rel="alternate" type="text/markdown" title="llms.txt — site summary for AI agents" href="../llms.txt" />
+
+  <!-- Self-hosted fonts (Inter + JetBrains Mono). Licences live in
+       /assets/fonts/<family>/LICENSE and on /legal. No third-party
+       font CDN call — the only origin in play is our own. -->
+  <link rel="stylesheet" href="../assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Primary">
+  <div class="container nav-inner">
+    <a href="#top" class="nav-brand" aria-label="privacykey home">
+      <img src="../assets/logos/privacykey-icon-green.svg" alt="" />
+      <span class="wm">privacy<span class="accent">key</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#apps" class="nav-link-inline">Apps</a>
+      <!-- TODO(launch): re-enable the language switcher once additional
+           locales are ready to promote. The /el/ and /zh/ pages still
+           exist and the root redirect still uses Accept-Language; this
+           only hides the manual switcher in the nav.
+      <label class="lang-switcher">
+    <span class="visually-hidden" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Language</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    <select aria-label="Language" onchange="if(this.value)location.href=this.value">
+      <option value="../en/index.html" selected>English</option>
+      <option value="../zh/index.html">中文</option>
+      <option value="../el/index.html">Ελληνικά</option>
+    </select>
+  </label>
+      -->
+      <a href="https://github.com/privacykey" class="nav-cta" target="_blank" rel="noopener" aria-label="View on GitHub: privacykey organisation (opens in new tab)">
+        View on GitHub
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="hero" id="top">
+  <div class="hero-rain" data-hero-rain aria-hidden="true"><canvas></canvas></div>
+  <div class="container">
+    <h1>Your <span class="word-privacy">privacy</span>, your <span class="accent">control.</span></h1>
+    <p class="lede">A collection of open source tools that help you see what apps do with your data — and give you the controls to push back.</p>
+    <div class="hero-actions">
+      <a href="#apps" class="btn btn-primary">
+        Explore privacy tools
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://github.com/privacykey" class="btn btn-ghost" target="_blank" rel="noopener" aria-label="View on GitHub: privacykey organisation (opens in new tab)">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.71.08-.71 1.18.08 1.8 1.21 1.8 1.21 1.04 1.79 2.73 1.27 3.4.97.1-.76.41-1.27.74-1.56-2.55-.29-5.24-1.27-5.24-5.67 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.37-5.25 5.66.42.36.8 1.08.8 2.18v3.23c0 .31.21.67.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<section id="principles">
+  <div class="container">
+    <h2>Our values.</h2>
+    <p class="intro">We strive to break down barriers, to make the technical more accessible and clear. Our tools help people understand, and take control of their personal data. These values guide what we do, why we create, and who we are. We are:</p>
+
+    <div class="principles">
+      <article class="principle">
+        <span class="dot"></span>
+        <h3>Transparent</h3>
+        <p>Open about what we do, the tools we use, the libraries we ship.</p>
+      </article>
+      <article class="principle">
+        <span class="dot"></span>
+        <h3>Innovative</h3>
+        <p>Be the change we want to see. Spark it with resourcefulness, sustain it with continuous improvement.</p>
+      </article>
+      <article class="principle">
+        <span class="dot"></span>
+        <h3>Actionable</h3>
+        <p>Give people the power to make a difference — a toggle, a switch, an app, a deliverable.</p>
+      </article>
+      <article class="principle">
+        <span class="dot"></span>
+        <h3>Simplifying</h3>
+        <p>Make the complex, clear.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="apps">
+  <div class="container">
+    <div class="apps-head">
+      <div class="copy">
+        <span class="kicker">Our tools</span>
+        <h2>What we developed to solve real problems</h2>
+        <p class="intro">Small, specific apps built around a shared identity. The first a macOS forensic auditor, currently in beta: privacycommand. More are on the way.</p>
+      </div>
+    </div>
+
+    <div class="apps-grid">
+      <!-- TODO(launch): re-enable the privacytracker card once the
+           lowercase rebrand ships on privacytracker
+      <article class="app-card featured">
+        <div class="app-top">
+          <div class="app-icon"><img src="../assets/icons/ios-auditor-icon.png" alt="" loading="lazy" decoding="async" /></div>
+          <div class="app-title">
+            <h3>privacy<span class="accent-tracker">tracker</span></h3>
+            <span class="app-meta">privacykey/privacytracker</span>
+          </div>
+          <span class="app-badge beta">Beta</span>
+        </div>
+        <div class="app-body">
+          <p style="margin: 0;">Tracks App Store privacy labels, diffs changes over time, and summarises developer privacy policies with AI — so you can see exactly what shifted, when, and why it matters.</p>
+        </div>
+        <div class="app-tags">
+          <span class="app-tag">Privacy labels</span>
+          <span class="app-tag">Change diffs</span>
+          <span class="app-tag">AI summaries</span>
+          <span class="app-tag">iOS</span>
+        </div>
+        <div class="app-actions">
+          <a href="https://github.com/privacykey/privacytracker" class="app-link primary" target="_blank" rel="noopener">
+            Open privacytracker
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://github.com/privacykey/privacytracker" class="app-link" target="_blank" rel="noopener" aria-label="privacytracker source code on GitHub (opens in new tab)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.71.08-.71 1.18.08 1.8 1.21 1.8 1.21 1.04 1.79 2.73 1.27 3.4.97.1-.76.41-1.27.74-1.56-2.55-.29-5.24-1.27-5.24-5.67 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.37-5.25 5.66.42.36.8 1.08.8 2.18v3.23c0 .31.21.67.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            Source
+          </a>
+        </div>
+      </article>
+      -->
+
+      <article class="app-card featured command">
+        <div class="app-top">
+          <div class="app-icon"><img src="../assets/icons/privacycommand-icon.svg" alt="" loading="lazy" decoding="async" /></div>
+          <div class="app-title">
+            <h3>privacy<span class="accent-command">command</span></h3>
+            <span class="app-meta">privacykey/privacycommand</span>
+          </div>
+          <span class="app-badge beta">Beta</span>
+        </div>
+        <div class="app-body">
+          <p style="margin: 0;">A forensic auditor for macOS. Drop a <code>.app</code> bundle and see frameworks, telemetry, signed identities, hard-coded domains, login items, and live file or network events the app uses.</p>
+        </div>
+        <div class="app-tags">
+          <span class="app-tag">macOS App inspection</span>
+          <span class="app-tag">Static + dynamic analysis</span>
+          <span class="app-tag">Preview app updates</span>
+          <span class="app-tag">VM sandboxing</span>
+        </div>
+        <div class="app-actions">
+          <a href="https://github.com/privacykey/privacycommand" class="app-link primary" target="_blank" rel="noopener">
+            Open privacycommand
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://github.com/privacykey/privacycommand" class="app-link" target="_blank" rel="noopener" aria-label="privacycommand source code on GitHub (opens in new tab)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.71.08-.71 1.18.08 1.8 1.21 1.8 1.21 1.04 1.79 2.73 1.27 3.4.97.1-.76.41-1.27.74-1.56-2.55-.29-5.24-1.27-5.24-5.67 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.37-5.25 5.66.42.36.8 1.08.8 2.18v3.23c0 .31.21.67.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            Source
+          </a>
+        </div>
+      </article>
+
+      <article class="app-card coming" aria-label="More apps coming soon">
+        <div class="coming-inner">
+          <div class="app-icon" style="margin: 0 auto 16px;">
+            <img class="coming-icon-light" src="../assets/logos/privacykey-icon-mono-light.svg" alt="" loading="lazy" decoding="async" style="opacity: 0.9;" />
+            <img class="coming-icon-dark"  src="../assets/logos/privacykey-icon-mono-dark.svg"  alt="" loading="lazy" decoding="async" style="opacity: 0.9;" />
+          </div>
+          <h3>More tools, soon</h3>
+          <p>Additional privacykey tools are in development. Follow along on GitHub.</p>
+          <a href="https://github.com/privacykey" class="app-link" style="margin-top: 18px;" target="_blank" rel="noopener" aria-label="Follow the org on GitHub: privacykey (opens in new tab)">
+            Follow the org
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-brand">
+        <img src="../assets/logos/privacykey-icon-green.svg" alt="" loading="lazy" decoding="async" />
+        <span class="wm">privacy<span class="accent">key</span></span>
+      </div>
+      <p style="margin: 0; max-width: 340px;">An organisation developing open-source tools that help people understand, protect, and take control of their personal data.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Projects</h4>
+      <!-- TODO(launch): re-enable privacytracker link once the rebrand ships.
+      <a href="https://github.com/privacykey/privacytracker" target="_blank" rel="noopener" aria-label="privacytracker on GitHub (opens in new tab)">privacytracker</a>
+      -->
+      <a href="https://github.com/privacykey/privacycommand" target="_blank" rel="noopener" aria-label="privacycommand on GitHub (opens in new tab)">privacycommand</a>
+      <a href="https://github.com/privacykey" target="_blank" rel="noopener" aria-label="All projects on GitHub: privacykey organisation (opens in new tab)">All projects</a>
+    </div>
+    <div class="footer-col">
+      <h4>Org</h4>
+      <a href="https://github.com/privacykey" target="_blank" rel="noopener" aria-label="github.com/privacykey — privacykey organisation on GitHub (opens in new tab)">github.com/privacykey</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <!-- Year is populated by JS at the bottom of the page; empty fallback
+         (rather than hard-coded year) so no-JS visitors after the year
+         rolls over don't see a stale date. -->
+    <div>&copy; <span id="year"></span> privacykey</div>
+    <div>
+      <a href="/privacy.html">Privacy</a> ·
+      <a href="/open.html">Open</a> ·
+      <a href="/legal.html">Legal</a> ·
+      Assets CC BY-NC 4.0
+    </div>
+  </div>
+  <div class="footer-rain" data-hero-rain aria-hidden="true"><canvas></canvas></div>
+</footer>
+
+<!-- Three.js — self-hosted at assets/vendor/three.min.js. MIT-licensed,
+     redistributed under the terms in assets/vendor/three.LICENSE. Same-
+     origin script: no SRI/crossorigin needed. -->
+<script src="../assets/vendor/three.min.js" defer></script>
+<script src="../assets/hero-rain.js" defer></script>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- Simple Analytics — privacy-friendly, cookieless analytics. The full
+     methodology and what we do/don't collect is documented at /privacy
+     and the live numbers are published at /open. The script honours Do
+     Not Track and respects content blockers (the page works fine without
+     it). The <noscript> pixel is a fallback for visitors with JS off; it
+     fires the same beacon shape with no script execution. -->
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

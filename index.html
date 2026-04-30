@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <!--
+    Defence-in-depth headers, mirrored from privacykey/privacytracker's
+    Next.js proxy.ts. Static GitHub Pages can't set HTTP headers, so we
+    apply the meta-supported subset here. This file is the language-
+    redirect splash; it only runs an inline <script> + inline <style>,
+    so a tighter CSP would technically work — kept identical to the
+    per-locale pages so adding new behaviour later doesn't surprise.
+    See per-locale index.html for the full rationale comment.
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <title>privacykey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <meta http-equiv="refresh" content="0; url=./en/index.html" />
+  <link rel="canonical" href="./en/" />
+  <link rel="alternate" hreflang="en" href="./en/" />
+  <link rel="alternate" hreflang="zh-Hans" href="./zh/" />
+  <link rel="alternate" hreflang="el" href="./el/" />
+  <link rel="alternate" hreflang="x-default" href="./en/" />
+  <style>
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,sans-serif;background:#F8FAFC;color:#0F172A}
+    @media (prefers-color-scheme: dark){html,body{background:#111118;color:#E6EDF5}}
+    .wrap{min-height:100vh;display:grid;place-items:center;padding:24px;text-align:center}
+    a{color:#166534;text-decoration:underline;text-underline-offset:3px;margin:0 8px;padding:8px;display:inline-block;min-height:44px;box-sizing:border-box;line-height:28px}
+    @media (prefers-color-scheme: dark){a{color:#30D158}}
+  </style>
+  <script>
+    (function () {
+      try {
+        var supported = ['en','zh','el'];
+        var raw = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+        var base = String(raw).toLowerCase();
+        var primary = base.split('-')[0];
+        var pick = 'en';
+        if (base.indexOf('zh') === 0) pick = 'zh';
+        else if (supported.indexOf(primary) !== -1) pick = primary;
+        window.location.replace('./' + pick + '/index.html');
+      } catch (e) {
+        window.location.replace('./en/index.html');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <p>Redirecting to your language… if nothing happens, choose one:
+      <a href="./en/index.html">English</a> · <a href="./zh/index.html">中文</a> · <a href="./el/index.html">Ελληνικά</a>
+    </p>
+  </div>
+</body>
+</html>

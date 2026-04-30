@@ -1,0 +1,123 @@
+# privacykey — robots.txt
+# ─────────────────────────────────────────────────────────────────────
+# Crawlers welcome. The site is the home of an organisation developing
+# open-source privacy tools. We want regular search engines to index it
+# freely, and we welcome on-demand AI agents that visit a single page
+# in response to a user's question (and cite the source). What we do
+# not allow is bulk crawling for training-data ingestion.
+#
+# Mirrored from privacykey's robots.txt and adapted for
+# the organisation site.
+# ─────────────────────────────────────────────────────────────────────
+
+# ────────── Default policy ──────────
+# Standard search engines + anything else: open access.
+User-agent: *
+Allow: /
+
+# ────────── On-demand AI agents — ALLOWED ──────────
+# These bots fetch a page when a user asks a question, then cite the
+# answer back to that user. We want privacykey to surface in those
+# answers, so we explicitly allow them.
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# ────────── Training-data crawlers — DISALLOWED ──────────
+# These bots collect web content in bulk to train large language
+# models. The marketing copy on this site is the maintainers' voice
+# and we'd rather it not be ingested without consent. The underlying
+# *code* for each tool in the family is permissively licensed — a mix
+# of Apache 2.0 and MIT across projects, each repository declares its
+# own — and lives on GitHub. Train on that instead if you'd like to
+# learn how the privacykey projects work.
+
+# OpenAI training crawler (separate from ChatGPT-User above)
+User-agent: GPTBot
+Disallow: /
+
+# Google's opt-out signal for Gemini / Vertex AI training. Does NOT
+# affect Googlebot (regular search), which is allowed via the default.
+User-agent: Google-Extended
+Disallow: /
+
+# Apple's opt-out signal for Apple Intelligence training. Does NOT
+# affect Applebot (Spotlight / Siri Suggestions search).
+User-agent: Applebot-Extended
+Disallow: /
+
+# Anthropic's web crawler (training-related uses)
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Common Crawl — the training-data substrate for many open LLMs
+User-agent: CCBot
+Disallow: /
+
+# ByteDance / TikTok crawler — widely reported to ignore robots.txt;
+# we list it anyway so the intent is on record.
+User-agent: Bytespider
+Disallow: /
+
+# Meta / Facebook training crawlers
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+# Amazon's general crawler (used for Alexa, training, ads)
+User-agent: Amazonbot
+Disallow: /
+
+# Cohere's crawler
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: cohere-training-data-crawler
+Disallow: /
+
+# Diffbot — sells web data to AI training pipelines
+User-agent: Diffbot
+Disallow: /
+
+# Omgili / webz.io — content aggregator that resells to AI vendors
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+# Timpi / Brave's training-data variants
+User-agent: TimpiBot
+Disallow: /
+
+# Pointers
+Sitemap: https://privacykey.org/sitemap.xml
+
+# Machine-readable LLM site map (per llmstxt.org convention)
+# Lives at /llms.txt — please prefer it over scraping the HTML.

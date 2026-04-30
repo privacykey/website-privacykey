@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+
+  <!-- CSP for /open: like the rest of the site, plus an allowance for the
+       Simple Analytics dashboard iframe (frame-src) and the analytics
+       beacon (script-src + img-src + connect-src). Everything Simple
+       Analytics serves comes from *.simpleanalyticscdn.com (script + pixel)
+       and dashboard.simpleanalytics.com (the embedded dashboard itself). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; img-src 'self' data: https://queue.simpleanalyticscdn.com; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://scripts.simpleanalyticscdn.com; connect-src 'self' https://queue.simpleanalyticscdn.com; frame-src https://dashboard.simpleanalytics.com https://simpleanalytics.com; object-src 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <title>Open stats — privacykey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Live, public Simple Analytics dashboard for privacykey.org. The same numbers we see — page views, referrers, and country breakdown — with no cookies and no personal data." />
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#111118" media="(prefers-color-scheme: dark)" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="canonical" href="https://privacykey.org/open.html" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/privacykey-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/privacykey-180.png" />
+
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="assets/site.css" />
+
+  <style>
+    /* Mirror of the prose layout used on /privacy and /legal, with a wider
+       max-width for the embedded dashboard so charts have room to breathe. */
+    article.prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 56px 24px 48px;
+      font-size: 17px; line-height: 1.7;
+    }
+    @media (max-width: 640px) { article.prose { padding: 40px 20px 32px; font-size: 16px; } }
+    article.prose h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700; letter-spacing: -1px; line-height: 1.15;
+      margin: 0 0 8px;
+    }
+    article.prose h2 {
+      font-size: 20px; font-weight: 700; letter-spacing: -0.3px;
+      margin: 36px 0 12px; color: var(--ink);
+    }
+    article.prose .crumb {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--green-deep); font-weight: 600; margin-bottom: 14px;
+    }
+    article.prose .crumb::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green); box-shadow: 0 0 0 4px rgba(48,209,88,0.18);
+    }
+    article.prose p, article.prose li { color: var(--slate); margin: 0 0 14px; }
+    article.prose strong { color: var(--ink); font-weight: 600; }
+    article.prose code {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.9em; padding: 2px 6px;
+      background: var(--surface-soft, #F8FAFC);
+      border: 1px solid var(--line-strong);
+      border-radius: 5px; color: var(--ink);
+    }
+
+    /* Dashboard wrapper: full-width, contained inside a generous max-width
+       for desktop. The iframe itself is responsive — its embedded layout
+       reflows. We give it a tall default so charts don't squish. */
+    .dashboard-wrap {
+      max-width: 1200px;
+      margin: 0 auto 64px;
+      padding: 0 24px;
+    }
+    @media (max-width: 640px) { .dashboard-wrap { padding: 0 12px; margin-bottom: 40px; } }
+    .dashboard-frame {
+      width: 100%;
+      height: 1800px;
+      border: 1px solid var(--line-strong);
+      border-radius: 16px;
+      background: var(--surface-soft, #F8FAFC);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    @media (max-width: 640px) { .dashboard-frame { height: 2400px; border-radius: 12px; } }
+
+    .dashboard-fallback {
+      max-width: 720px; margin: 0 auto 32px;
+      padding: 18px 22px;
+      background: rgba(48,209,88,0.06);
+      border: 1px solid rgba(48,209,88,0.25);
+      border-left: 4px solid var(--green-deep);
+      border-radius: 12px;
+      font-size: 15px; color: var(--slate);
+    }
+    .dashboard-fallback strong { color: var(--ink); }
+    .dashboard-fallback a { color: var(--green-deep); font-weight: 600; }
+
+    .nav-mini {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .nav-mini .brand-mini {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 700; color: var(--ink); text-decoration: none;
+    }
+    .nav-mini .brand-mini img { width: 26px; height: 26px; }
+    .nav-mini .accent {
+      background-image: linear-gradient(180deg, #30D158 0%, #30D158 60%, #166534 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    /* Slim footer — cross-links live here, not in the nav. */
+    footer.page-footer {
+      border-top: 1px solid var(--line-strong);
+      margin-top: 32px;
+      padding: 28px 24px 36px;
+      color: var(--muted); font-size: 14px;
+    }
+    footer.page-footer .page-footer-inner {
+      max-width: 720px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+    }
+    footer.page-footer nav a {
+      color: var(--slate); text-decoration: none; margin: 0 6px;
+    }
+    footer.page-footer nav a:hover { color: var(--ink); }
+    footer.page-footer nav a:first-child { margin-left: 0; }
+  </style>
+</head>
+<body>
+
+<nav class="nav-mini" aria-label="Primary">
+  <a href="/" class="brand-mini">
+    <img src="assets/logos/privacykey-icon-green.svg" alt="" />
+    <span>privacy<span class="accent">key</span></span>
+  </a>
+</nav>
+
+<article class="prose">
+  <span class="crumb">Open stats</span>
+  <h1>Live numbers from our site.</h1>
+  <p>Why publish it? Well, we believe in transparency, which is baked into the tools we ship and why they're open source. Because we do gather stats, it makes sense that they should be public, so you can have all the facts to make a decision.</p>
+  <p>The dashboard below has visitors and page views, where they came from (search, direct, referring sites), which pages are popular, and a rough country breakdown. We chose simpleanalytcics as being one of the most privacy respecting tools, also run by a small team.</p>
+</article>
+
+<div class="dashboard-wrap">
+  <!--
+    Simple Analytics public-dashboard embed.
+
+    Once you've added privacykey.org to your Simple Analytics account and
+    flipped the dashboard to "public", swap the iframe URL below for the
+    one Simple Analytics gives you in Settings → Public dashboard. The
+    canonical pattern is one of:
+
+      https://dashboard.simpleanalytics.com/embed/privacykey.org
+      https://simpleanalytics.com/privacykey.org.embed
+      https://dashboard.simpleanalytics.com/privacykey.org
+
+    The CSP `frame-src` already allows both `dashboard.simpleanalytics.com`
+    and `simpleanalytics.com`, so any of those will load.
+
+    `loading="lazy"` keeps the iframe out of the critical path; visitors
+    who never scroll to the dashboard pay no cost for it.
+  -->
+  <iframe
+    class="dashboard-frame"
+    src="https://dashboard.simpleanalytics.com/embed/privacykey.org"
+    title="Public Simple Analytics dashboard for privacykey.org"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    sandbox="allow-scripts allow-same-origin allow-popups">
+  </iframe>
+</div>
+
+<article class="prose" style="padding-top: 0;">
+  <div class="dashboard-fallback">
+    <strong>Can't see the dashboard above?</strong> Some browsers and content blockers will refuse to load it being an analytics tool. You try directly at <a href="https://dashboard.simpleanalytics.com/privacykey.org" rel="noopener">dashboard.simpleanalytics.com/privacykey.org</a>, or check our raw data exports in <a href="https://github.com/privacykey/website-privacykey" rel="noopener">the website repo</a>.
+  </div>
+
+  <h2>How this is collected</h2>
+  <p>One small JavaScript file (~3KB) loaded on each page sends a single beacon when the page becomes visible. The beacon contains the page URL, the referrer (if any), the screen size bucket, and the page-load timing. No cookies are set. No localStorage is touched. No fingerprint is built. Simple Analytics resolves the request IP to a country and discards the IP itself.</p>
+  <p>If you have <em>Do Not Track</em> turned on in your browser, the beacon is skipped entirely. If you block <code>scripts.simpleanalyticscdn.com</code> at the DNS or extension layer, the beacon is skipped entirely. The site works fine without it.</p>
+  <p>For the full methodology, see <a href="https://docs.simpleanalytics.com/what-we-collect" rel="noopener">docs.simpleanalytics.com/what-we-collect</a>. </p>
+  <p>For information on our privacy, see our <a href="privacy.html">privacy policy</a>.</p>
+</article>
+
+<footer class="page-footer">
+  <div class="page-footer-inner">
+    <div>&copy; <span id="year"></span> privacykey</div>
+    <nav aria-label="Footer">
+      <a href="/">Home</a> ·
+      <a href="/privacy.html">Privacy</a> ·
+      <a href="/open.html" aria-current="page">Open</a> ·
+      <a href="/legal.html">Legal</a> ·
+      <a href="https://github.com/privacykey" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>
