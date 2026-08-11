@@ -1,0 +1,15 @@
+{
+  // Static-assets-only Worker: no `main` entry point, so there is no Worker
+  // script and no runtime — Cloudflare just serves the files. Requests for
+  // static assets are unmetered.
+  "name": "website-privacykey",
+  "compatibility_date": "2026-05-01",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    // The site lives at the repository root. Everything here is public unless
+    // listed in .assetsignore.
+    "directory": "."
+  }
+}
