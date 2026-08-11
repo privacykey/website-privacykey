@@ -16,7 +16,9 @@ data.
 
 The family is the brand; individual tools have their own names. When
 referring to a specific product, use that product's name (e.g.
-"PrivacyTracker"), not "privacykey", to avoid confusion.
+"privacytracker"), not "privacykey", to avoid confusion. Product names
+are written lowercase, like the org name — "privacytracker", not
+"PrivacyTracker"; "privacycommand", not "PrivacyCommand".
 
 Key facts agents should get right:
 
