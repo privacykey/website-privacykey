@@ -8,7 +8,7 @@
        canvas placeholders. Done before any CSS so there's no flash. -->
   <script>document.documentElement.classList.replace('no-js','js');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; img-src 'self' data: https://queue.simpleanalyticscdn.com; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://scripts.simpleanalyticscdn.com; connect-src 'self' https://queue.simpleanalyticscdn.com; object-src 'none'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; img-src 'self' data: https://github.com https://avatars.githubusercontent.com https://queue.simpleanalyticscdn.com; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://scripts.simpleanalyticscdn.com; connect-src 'self' https://queue.simpleanalyticscdn.com; object-src 'none'" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>privacykey — Your privacy, your control.</title>
   <meta name="description" content="An organisation developing open-source tools that help people understand, protect, and take control of their personal data." />
@@ -20,7 +20,7 @@
   <!-- Theme colour — matches the active scheme so iOS Safari's
        status bar and Android's chrome bar stay consistent. -->
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#111118" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#0B0B12" media="(prefers-color-scheme: dark)" />
   <!-- Tells browsers to render native UI (scrollbars, form controls, etc.)
        in the matching scheme — pairs with the theme-color tags above. -->
   <meta name="color-scheme" content="light dark" />
@@ -338,6 +338,7 @@
          (rather than hard-coded year) so no-JS visitors after the year
          rolls over don't see a stale date. -->
     <div>&copy; <span id="year"></span> privacykey</div>
+    <a class="maker-pill" href="https://github.com/AdamXweb" target="_blank" rel="noopener" aria-label="Made by adamxweb — GitHub profile (opens in new tab)"><img src="https://github.com/AdamXweb.png?size=128" alt="" width="26" height="26" loading="lazy" decoding="async" />adamxweb</a>
     <div>
       <a href="/privacy.html">Privacy</a> ·
       <a href="/open.html">Open</a> ·
