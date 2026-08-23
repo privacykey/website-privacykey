@@ -2,6 +2,10 @@
   // Static-assets-only Worker: no `main` entry point, so there is no Worker
   // script and no runtime — Cloudflare just serves the files. Requests for
   // static assets are unmetered.
+  //
+  // Cloudflare Workers Builds deploys this on every push to main with a plain
+  // `npx wrangler deploy`; the name below is the existing Worker and must not
+  // change, or the next deploy creates a second one.
   "name": "website-privacykey",
   "compatibility_date": "2026-05-01",
   "observability": {

@@ -26,13 +26,13 @@ It is hand-written static HTML, CSS and one JavaScript file. There is no framewo
 just run
 ```
 
-That is the only recipe in the [`justfile`](justfile); it runs `npx --yes wrangler pages dev .` and serves the repository root. Serving from the root matters — [`site.webmanifest`](site.webmanifest) uses absolute paths (`/en/`), so a server rooted anywhere else will not match production. `just --list` prints the recipes.
+It runs `npx --yes wrangler dev`, which reads [`wrangler.jsonc`](wrangler.jsonc) and serves the repository root. Serving from the root matters — [`site.webmanifest`](site.webmanifest) uses absolute paths (`/en/`), so a server rooted anywhere else will not match production. `just --list` prints the recipes.
 
 ## Build and deploy
 
-There is no build step. GitHub Pages serves `main` from the repository root, so merging to `main` is the deploy; the Pages origin is <https://privacykey.github.io/website-privacykey/>. Pages is configured to use [`404.html`](404.html) as the custom 404 page.
+There is no build step. Production is a Cloudflare Worker that serves the repository root as static assets — [`wrangler.jsonc`](wrangler.jsonc) names the Worker and points `assets.directory` at `.`; [`.assetsignore`](.assetsignore) keeps repository files off the air. Cloudflare Workers Builds is connected to this repository and deploys every push to `main` with `npx wrangler deploy`, so merging to `main` is the deploy. `just deploy` does the same by hand, for when the build is broken or a change has to go out without a merge.
 
-The public hostname <https://privacykey.org/> answers through Cloudflare and returns byte-identical content to the Pages origin. No `CNAME` file is committed — the domain is wired up outside this repository.
+The public hostname <https://privacykey.org/> is the Worker's custom domain; it is wired up in the Cloudflare dashboard, not in this repository.
 
 ## Where content and assets live
 
