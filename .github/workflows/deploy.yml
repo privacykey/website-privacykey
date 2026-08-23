@@ -1,0 +1,22 @@
+name: Deploy
+
+# Deploys the site on every merge to main with the justfile's own recipe.
+# Skips with a notice until the Cloudflare secrets exist.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['.github/**', '*.md']
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    uses: privacykey/gh-workflows/.github/workflows/site-deploy.yml@v1
+    secrets: inherit

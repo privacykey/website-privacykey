@@ -1,8 +1,14 @@
 # Repository files that must not be served as part of the site.
 #
 # assets.directory is the repository root, so anything NOT listed here is
-# reachable over HTTP. .well-known/ is deliberately absent from this list —
-# it carries security.txt (RFC 9116) and is meant to be public.
+# reachable over HTTP. wrangler has no default excludes of its own — .git/
+# included — so this list is the only thing keeping repository internals
+# off the air. .gh-workflows/ is where the deploy workflow checks out the
+# shared actions; it must never be uploaded. .well-known/ is deliberately
+# absent from this list — it carries security.txt (RFC 9116) and is meant
+# to be public.
+.git/
+.gh-workflows/
 README.md
 LICENSE
 justfile
