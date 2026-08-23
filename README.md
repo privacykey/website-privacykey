@@ -16,7 +16,7 @@ This site markets the privacykey family as a whole rather than a single product.
 - [privacytracker](https://github.com/privacykey/privacytracker)
 - [privacycommand](https://github.com/privacykey/privacycommand)
 
-Alongside the landing page the repo carries the org's public policy pages — [privacy](https://privacykey.org/privacy.html), [open](https://privacykey.org/open.html) (the public analytics dashboard) and [legal](https://privacykey.org/legal.html) — plus `robots.txt`, `sitemap.xml`, `llms.txt` and an RFC 9116 `security.txt`.
+Alongside the landing page the repo carries the org's public policy pages — [privacy](https://privacykey.org/privacy.html), [open](https://privacykey.org/open.html) (the public analytics dashboard) and [legal](https://privacykey.org/legal.html) — plus `robots.txt`, `sitemap.xml` and an RFC 9116 `security.txt`.
 
 It is hand-written static HTML, CSS and one JavaScript file. There is no framework, no bundler and no package manifest: what is committed is what is served.
 
@@ -46,7 +46,6 @@ The public hostname <https://privacykey.org/> is the Worker's custom domain; it 
 | [`assets/vendor/`](assets/vendor/) | Self-hosted Three.js plus its licence. |
 | [`assets/fonts/`](assets/fonts/) | Self-hosted Inter, JetBrains Mono and Noto Sans SC, each with its OFL licence text. |
 | [`assets/logos/`](assets/logos/), [`assets/icons/`](assets/icons/), [`assets/social/`](assets/social/) | Brand marks, the favicon and PWA icon family, and the 1200×630 social card. |
-| [`llms.txt`](llms.txt) | The preferred entrypoint for agents — kept current by hand when a tool ships. |
 | [`robots.txt`](robots.txt), [`sitemap.xml`](sitemap.xml), [`security.txt`](security.txt), [`.well-known/security.txt`](.well-known/security.txt) | Crawler rules, page index and disclosure policy. |
 
 Third-party code is vendored on purpose: the browser only ever talks to this origin, which keeps the Content-Security-Policy in each page's `<head>` tight and keeps the site's own privacy claim honest. [`assets/vendor/README.md`](assets/vendor/README.md) has the steps for updating Three.js and the fonts.

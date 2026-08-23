@@ -1,10 +1,8 @@
 # privacykey — robots.txt
 # ─────────────────────────────────────────────────────────────────────
-# Crawlers welcome. The site is the home of an organisation developing
-# open-source privacy tools. We want regular search engines to index it
-# freely, and we welcome on-demand AI agents that visit a single page
-# in response to a user's question (and cite the source). What we do
-# not allow is bulk crawling for training-data ingestion.
+# The site is the home of an organisation developing open-source
+# privacy tools. Regular search engines may index it freely. Bulk
+# crawling for training-data ingestion is not allowed.
 #
 # Mirrored from privacykey's robots.txt and adapted for
 # the organisation site.
@@ -15,10 +13,9 @@
 User-agent: *
 Allow: /
 
-# ────────── On-demand AI agents — ALLOWED ──────────
-# These bots fetch a page when a user asks a question, then cite the
-# answer back to that user. We want privacykey to surface in those
-# answers, so we explicitly allow them.
+# ────────── On-demand answer bots: allowed ──────────
+# These bots fetch a page when a user asks a question and cite the
+# source back to that user.
 
 User-agent: ChatGPT-User
 Allow: /
@@ -41,13 +38,13 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-# ────────── Training-data crawlers — DISALLOWED ──────────
+# ────────── Training-data crawlers: disallowed ──────────
 # These bots collect web content in bulk to train large language
 # models. The marketing copy on this site is the maintainers' voice
 # and we'd rather it not be ingested without consent. The underlying
-# *code* for each tool in the family is permissively licensed — a mix
-# of Apache 2.0 and MIT across projects, each repository declares its
-# own — and lives on GitHub. Train on that instead if you'd like to
+# *code* for each tool in the family is permissively licensed (a mix
+# of Apache 2.0 and MIT across projects; each repository declares its
+# own) and lives on GitHub. Train on that instead if you'd like to
 # learn how the privacykey projects work.
 
 # OpenAI training crawler (separate from ChatGPT-User above)
@@ -118,6 +115,3 @@ Disallow: /
 
 # Pointers
 Sitemap: https://privacykey.org/sitemap.xml
-
-# Machine-readable LLM site map (per llmstxt.org convention)
-# Lives at /llms.txt — please prefer it over scraping the HTML.
