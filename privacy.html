@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; img-src 'self' data: https://github.com https://avatars.githubusercontent.com https://queue.simpleanalyticscdn.com; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://scripts.simpleanalyticscdn.com; connect-src 'self' https://queue.simpleanalyticscdn.com; object-src 'none'" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-  <title>Privacy — privacykey</title>
+  <title>Privacy · privacykey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="What this site collects (nothing), the third-party endpoints any visit may touch, and how to go fully offline." />
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
@@ -118,44 +118,44 @@
   <span class="crumb">Privacy</span>
   <h1>Privacy on this site.</h1>
   <p class="last-updated">Last updated: 30 April 2026</p>
-  <p>privacykey is an organisation that builds privacy tools, so the rules we apply to this site are the rules we'd apply to any of them. Short version below; longer answers underneath. The numbers we collect aren't secret either — they're published live at <a href="open.html">privacykey.org/open</a>.</p>
+  <p>privacykey is an organisation that builds privacy tools, so the rules we apply to this site are the rules we'd apply to any of them. Short version below; longer answers underneath. The numbers we collect aren't secret either. They're published live at <a href="open.html">privacykey.org/open</a>.</p>
 
   <div class="summary">
     <h2>The short version</h2>
     <ul>
-      <li><strong>Privacy-friendly analytics only.</strong> We use <a href="https://simpleanalytics.com" rel="noopener">Simple Analytics</a> — no cookies, no personal data. The numbers it produces are <a href="/open.html">public on /open</a>.</li>
+      <li><strong>Privacy-friendly analytics only.</strong> We use <a href="https://simpleanalytics.com" rel="noopener">Simple Analytics</a>, which sets no cookies and collects no personal data. The numbers it produces are <a href="/open.html">public on /open</a>.</li>
       <li><strong>No accounts.</strong></li>
       <li><strong>Static site.</strong> No server-side logic. The HTML you load is the HTML on disk.</li>
-      <li><strong>Two third parties</strong> may receive your IP / User-Agent on a normal page load — our host (GitHub), and Simple Analytics. They're listed below.</li>
+      <li><strong>Two third parties</strong> may receive your IP / User-Agent on a normal page load: our host (GitHub), and Simple Analytics. They're listed below.</li>
     </ul>
   </div>
 
   <h2>What we collect</h2>
   <p>We use <strong>Simple Analytics</strong> to count page views and referrers in aggregate. It does this without setting cookies, without fingerprinting your browser, and without storing any data that could identify you personally. Their privacy posture and methodology are documented at <a href="https://docs.simpleanalytics.com/what-we-collect" rel="noopener">docs.simpleanalytics.com/what-we-collect</a>.</p>
   <p>Beyond that, there is no privacykey.org server tracking visits, building profiles, or storing identifiers. No cookies are set by this site itself. The site is a static set of HTML, CSS, and JavaScript files served by our host.</p>
-  <p>The numbers Simple Analytics produces aren't a secret — the dashboard is published in full at <a href="/open.html">privacykey.org/open</a>.</p>
+  <p>The numbers Simple Analytics produces aren't a secret. The dashboard is published in full at <a href="/open.html">privacykey.org/open</a>.</p>
 
   <h2>Third parties your browser may contact using our site</h2>
   <ul>
-    <li><strong>Simple Analytics</strong> (<code>scripts.simpleanalyticscdn.com</code>, <code>queue.simpleanalyticscdn.com</code>) — loads a small script (~3KB) and pings a beacon with the page URL and referrer. No cookies, no IDs, no fingerprints. They strip your IP after deriving the country and discard the rest. If JavaScript is disabled, only a fallback pixel fires (same data-shape, no script execution). You can opt out by enabling Do Not Track in your browser — Simple Analytics honours it.</li>
-    <li><strong>GitHub</strong> — the static-hosting for our site. Receives standard HTTP request logs (IP, time, path) for delivery and abuse-prevention. We don't run our own analytics on those logs.</li>
+    <li><strong>Simple Analytics</strong> (<code>scripts.simpleanalyticscdn.com</code>, <code>queue.simpleanalyticscdn.com</code>) loads a small script (~3KB) and pings a beacon with the page URL and referrer. No cookies, no IDs, no fingerprints. They strip your IP after deriving the country and discard the rest. If JavaScript is disabled, only a fallback pixel fires (same data-shape, no script execution). You can opt out by enabling Do Not Track in your browser; Simple Analytics honours it.</li>
+    <li><strong>GitHub</strong> provides the static hosting for our site. Receives standard HTTP request logs (IP, time, path) for delivery and abuse-prevention. We don't run our own analytics on those logs.</li>
   </ul>
-  <p>That's the lot. <strong>Fonts (Inter, JetBrains Mono, Noto Sans SC)</strong> and the <strong>Three.js</strong> library that powers the decorative rain animation are <em>self-hosted</em> — your browser only ever talks to our origin for them. Their licences are listed at <a href="legal.html">legal</a>.</p>
-  <p>If Simple Analytics bothers you, the site degrades gracefully — no rain disappears, no fonts swap out, the analytics ping just doesn't fire.</p>
+  <p>That's the lot. <strong>Fonts (Inter, JetBrains Mono, Noto Sans SC)</strong> and the <strong>Three.js</strong> library that powers the decorative rain animation are <em>self-hosted</em>, so your browser only ever talks to our origin for them. Their licences are listed at <a href="legal.html">legal</a>.</p>
+  <p>If Simple Analytics bothers you, the site degrades gracefully. The rain stays, the fonts stay, and the analytics ping just doesn't fire.</p>
 
   <h2>Going fully offline-ish</h2>
   <p>If you'd rather make zero third-party requests:</p>
   <ul>
-    <li>Block <code>*.simpleanalyticscdn.com</code> in your browser or DNS. The site will work normally — only the analytics ping is skipped.</li>
-    <li>Turn on <em>Do Not Track</em> in your browser — Simple Analytics will skip the ping by itself, no extension required.</li>
-    <li>Or read the underlying source on <a href="https://github.com/privacykey" rel="noopener">our GitHub</a> — the same content as a flat repo.</li>
+    <li>Block <code>*.simpleanalyticscdn.com</code> in your browser or DNS. The site will work normally; only the analytics ping is skipped.</li>
+    <li>Turn on <em>Do Not Track</em> in your browser, and Simple Analytics will skip the ping by itself, no extension required.</li>
+    <li>Or read the underlying source on <a href="https://github.com/privacykey" rel="noopener">our GitHub</a>, the same content as a flat repo.</li>
   </ul>
 
   <h2>Changes to this page</h2>
   <p>The canonical version of this page lives in our <a href="https://github.com/privacykey/website-privacykey-privacykey" rel="noopener">website repo</a>. Material changes are noted in the commit log; the "Last updated" date at the top reflects the most recent change.</p>
 
   <h2>Contact</h2>
-  <p>For privacy questions: <a href="mailto:privacy@privacykey.org">privacy@privacykey.org</a>. For security disclosures: <a href="mailto:security@privacykey.org">security@privacykey.org</a> — please follow the policy at <a href="/.well-known/security.txt">/.well-known/security.txt</a>, not a public issue.</p>
+  <p>For privacy questions: <a href="mailto:privacy@privacykey.org">privacy@privacykey.org</a>. For security disclosures: <a href="mailto:security@privacykey.org">security@privacykey.org</a>. Please follow the policy at <a href="/.well-known/security.txt">/.well-known/security.txt</a> rather than opening a public issue.</p>
 </article>
 
 <footer class="page-footer">
