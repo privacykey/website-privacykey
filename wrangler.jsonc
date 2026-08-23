@@ -14,6 +14,10 @@
   "assets": {
     // The site lives at the repository root. Everything here is public unless
     // listed in .assetsignore.
+    // Serve 404.html (with a real 404 status) for paths that do not exist,
+    // instead of an empty response. wrangler walks up from the requested
+    // path looking for a 404.html, so the root one covers every route.
+    "not_found_handling": "404-page",
     "directory": "."
   }
 }
