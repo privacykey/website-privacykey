@@ -2,7 +2,7 @@
   color-scheme: light dark;
 
   /* Brand */
-  --navy-deep: #111118;
+  --navy-deep: #0B0B12;
   --navy: #1E3A8A;
   --green: #30D158;
   --green-deep: #166534;
@@ -52,29 +52,29 @@
   --radius-lg: 20px;
   --radius-md: 14px;
   --radius-btn: 10px;   /* buttons, CTAs, link hovers, chips — unified square-ish shape */
-  --shadow-soft: 0 30px 60px -30px rgba(17, 17, 24, 0.25);
-  --shadow-lift: 0 40px 80px -40px rgba(17, 17, 24, 0.45);
+  --shadow-soft: 0 30px 60px -30px rgba(11, 11, 18, 0.25);
+  --shadow-lift: 0 40px 80px -40px rgba(11, 11, 18, 0.45);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --ink: #E6EDF5;
-    --slate: #CBD5E1;
-    --muted: #9AA7B8;
-    --line: #2A2A33;
+    --ink: #E8E8F2;
+    --slate: #A0A0B4;
+    --muted: #6E6E85;
+    --line: #242430;
     --line-strong: #3A3A44;
-    --surface: #1A1A22;
-    --surface-soft: #111118;
+    --surface: #14141C;
+    --surface-soft: #0B0B12;
 
     --green-deep: #30D158;
     --green-soft: #14532D;
     --navy: #93C5FD;
-    --navy-deep: #111118;
+    --navy-deep: #0B0B12;
 
-    --nav-bg: rgba(17, 17, 24, 0.78);
+    --nav-bg: rgba(11, 11, 18, 0.78);
     --hero-gradient-top: #14141C;
-    --hero-gradient-bottom: #111118;
-    --btn-ghost-bg: #1A1A22;
+    --hero-gradient-bottom: #0B0B12;
+    --btn-ghost-bg: #191922;
     --ui-border: #7C8795;
     --coming-bg: #14141C;
     --coming-border: #7C8795;
@@ -257,11 +257,17 @@ a:hover {
   border-bottom: 1px solid var(--line);
 }
 .hero h1 {
-  font-size: clamp(38px, 5.6vw, 76px);
-  font-weight: 700; letter-spacing: -2.2px;
-  margin: 18px 0 10px; line-height: 1.02;
+  font-size: clamp(34px, 5vw, 64px);
+  font-weight: 800; letter-spacing: -.04em;
+  margin: 18px 0 10px; line-height: 1.03;
   color: var(--ink);
 }
+/* Locale metrics. zh: Noto Sans SC ships static 400–700 only — 800 would
+   faux-bold — and CJK wants no negative tracking plus taller leading.
+   el: Greek ascenders/descenders breathe better a touch looser and a
+   hair smaller at the ceiling. */
+:lang(zh) .hero h1 { letter-spacing: 0; line-height: 1.35; font-weight: 700; }
+:lang(el) .hero h1 { font-size: clamp(30px, 4.5vw, 58px); letter-spacing: -.02em; }
 .hero h1 .accent {
   color: var(--wordmark-accent); /* fallback */
   background-image: var(--wordmark-gradient);
@@ -319,7 +325,7 @@ a:hover {
 .btn-ghost {
   background: var(--btn-ghost-bg); color: var(--ink) !important;
   border-color: var(--ink);
-  box-shadow: 0 6px 20px -12px rgba(17, 17, 24, 0.35);
+  box-shadow: 0 6px 20px -12px rgba(11, 11, 18, 0.35);
 }
 .btn-ghost:hover {
   border-color: var(--green-deep);
@@ -332,12 +338,12 @@ a:hover {
 
 @media (prefers-color-scheme: dark) {
   .btn-primary {
-    background: #30D158; color: #111118 !important;
+    background: #30D158; color: #0B0B12 !important;
     border-color: #BBF7D0;
     box-shadow: 0 14px 32px -12px rgba(48, 209, 88, 0.7), inset 0 0 0 1px rgba(255,255,255,0.12);
   }
   .btn-primary:hover {
-    background: #86EFAC; color: #111118 !important;
+    background: #86EFAC; color: #0B0B12 !important;
     border-color: #E6EDF5;
   }
   .btn-ghost { border-color: var(--ink); }
@@ -362,12 +368,12 @@ body.remix-indigo .btn-primary:hover {
 }
 @media (prefers-color-scheme: dark) {
   body.remix-indigo .btn-primary {
-    background: #818CF8; color: #111118 !important;
+    background: #818CF8; color: #0B0B12 !important;
     border-color: #C7D2FE;
     box-shadow: 0 14px 32px -12px rgba(129, 140, 248, 0.7), inset 0 0 0 1px rgba(255,255,255,0.12);
   }
   body.remix-indigo .btn-primary:hover {
-    background: #A5B4FC; color: #111118 !important;
+    background: #A5B4FC; color: #0B0B12 !important;
     border-color: #E6EDF5;
   }
 }
@@ -385,12 +391,12 @@ body.remix-tracker .btn-primary:hover {
 }
 @media (prefers-color-scheme: dark) {
   body.remix-tracker .btn-primary {
-    background: #5fb0ff; color: #111118 !important;
+    background: #5fb0ff; color: #0B0B12 !important;
     border-color: #93C5FD;
     box-shadow: 0 14px 32px -12px rgba(95, 176, 255, 0.7), inset 0 0 0 1px rgba(255,255,255,0.12);
   }
   body.remix-tracker .btn-primary:hover {
-    background: #93C5FD; color: #111118 !important;
+    background: #93C5FD; color: #0B0B12 !important;
     border-color: #E6EDF5;
   }
 }
@@ -414,7 +420,7 @@ section:last-of-type { border-bottom: 0; }
 }
 h2 {
   font-size: clamp(28px, 3.4vw, 40px);
-  font-weight: 700; letter-spacing: -1px;
+  font-weight: 700; letter-spacing: -.025em;
   margin: 0 0 10px; color: var(--ink);
 }
 .intro {
@@ -441,7 +447,7 @@ h2 {
   background: var(--green); display: inline-block; margin-bottom: 12px;
   box-shadow: 0 0 0 6px rgba(48, 209, 88, 0.12);
 }
-.principle h3 { margin: 0 0 6px; font-size: 17px; font-weight: 600; letter-spacing: -0.2px; }
+.principle h3 { margin: 0 0 6px; font-size: 17px; font-weight: 600; letter-spacing: -.012em; }
 .principle p { margin: 0; font-size: 14px; color: var(--slate); line-height: 1.55; }
 
 /* ---------- Apps ---------- */
@@ -496,7 +502,7 @@ h2 {
   border: 1px solid rgba(255,255,255,0.12);
 }
 .app-icon img { width: 72%; height: auto; }
-.app-title h3 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.app-title h3 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -.015em; }
 
 /* Per-product wordmark gradients on the second half of each product name.
    Each product carries its own brand gradient so the family page reads as
@@ -591,7 +597,7 @@ h2 {
   transform: translateY(-1px);
   color: var(--ink) !important;
   text-decoration: none;
-  box-shadow: 0 8px 20px -12px rgba(17, 17, 24, 0.35);
+  box-shadow: 0 8px 20px -12px rgba(11, 11, 18, 0.35);
 }
 .app-link.primary {
   background: var(--product-blue); border-color: var(--product-blue-deep); color: #fff !important;
@@ -698,6 +704,29 @@ footer {
   border-top: 1px solid var(--line);
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   font-size: 13px; color: var(--slate);
+}
+.footer-bottom { align-items: center; }
+
+/* ---------- Maker pill ----------
+   Footer credit chip linking to the maker's GitHub profile. Fixed
+   void-dark colours in both schemes so the avatar always sits on the
+   family ground. */
+.maker-pill {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 6px 15px 6px 6px;
+  background: #14141C;
+  border: 1px solid #242430;
+  border-radius: 999px;
+  font-size: 13.5px;
+  color: #E8E8F2;
+  text-decoration: none;
+}
+.maker-pill:hover { border-color: #3A3A44; }
+.maker-pill img {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 1px solid #242430;
+  display: block;
 }
 
 /* ---------- Long-press easter egg ----------

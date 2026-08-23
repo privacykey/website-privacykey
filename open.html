@@ -9,14 +9,14 @@
        beacon (script-src + img-src + connect-src). Everything Simple
        Analytics serves comes from *.simpleanalyticscdn.com (script + pixel)
        and dashboard.simpleanalytics.com (the embedded dashboard itself). -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; img-src 'self' data: https://queue.simpleanalyticscdn.com; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://scripts.simpleanalyticscdn.com; connect-src 'self' https://queue.simpleanalyticscdn.com; frame-src https://dashboard.simpleanalytics.com https://simpleanalytics.com; object-src 'none'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; img-src 'self' data: https://github.com https://avatars.githubusercontent.com https://queue.simpleanalyticscdn.com; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://scripts.simpleanalyticscdn.com; connect-src 'self' https://queue.simpleanalyticscdn.com; frame-src https://dashboard.simpleanalytics.com https://simpleanalytics.com; object-src 'none'" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
   <title>Open stats — privacykey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="Live, public Simple Analytics dashboard for privacykey.org. The same numbers we see — page views, referrers, and country breakdown — with no cookies and no personal data." />
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#111118" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#0B0B12" media="(prefers-color-scheme: dark)" />
   <meta name="color-scheme" content="light dark" />
   <link rel="canonical" href="https://privacykey.org/open.html" />
 
@@ -38,11 +38,11 @@
     @media (max-width: 640px) { article.prose { padding: 40px 20px 32px; font-size: 16px; } }
     article.prose h1 {
       font-size: clamp(28px, 4vw, 40px);
-      font-weight: 700; letter-spacing: -1px; line-height: 1.15;
+      font-weight: 700; letter-spacing: -.025em; line-height: 1.15;
       margin: 0 0 8px;
     }
     article.prose h2 {
-      font-size: 20px; font-weight: 700; letter-spacing: -0.3px;
+      font-size: 20px; font-weight: 700; letter-spacing: -.015em;
       margin: 36px 0 12px; color: var(--ink);
     }
     article.prose .crumb {
@@ -189,6 +189,7 @@
 <footer class="page-footer">
   <div class="page-footer-inner">
     <div>&copy; <span id="year"></span> privacykey</div>
+    <a class="maker-pill" href="https://github.com/AdamXweb" target="_blank" rel="noopener" aria-label="Made by adamxweb — GitHub profile (opens in new tab)"><img src="https://github.com/AdamXweb.png?size=128" alt="" width="26" height="26" loading="lazy" decoding="async" />adamxweb</a>
     <nav aria-label="Footer">
       <a href="/">Home</a> ·
       <a href="/privacy.html">Privacy</a> ·
