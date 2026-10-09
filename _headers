@@ -1,0 +1,7 @@
+# Workers static assets header rules (not served itself).
+# RFC 9116 §3 requires security.txt to be served as text/plain with charset utf-8.
+/.well-known/security.txt
+  Content-Type: text/plain; charset=utf-8
+
+/security.txt
+  Content-Type: text/plain; charset=utf-8

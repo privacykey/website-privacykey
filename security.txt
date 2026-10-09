@@ -1,6 +1,6 @@
 # privacykey — Security disclosure policy
 # RFC 9116 — https://www.rfc-editor.org/rfc/rfc9116
-# Last updated: 2026-04-26
+# Last updated: 2026-10-09
 
 # privacykey is the organisation. Vulnerabilities in a specific tool
 # (e.g. privacytracker) should be reported via that tool's own
@@ -16,17 +16,16 @@ Contact: https://github.com/privacykey/.github/security/advisories/new
 Contact: https://github.com/privacykey/privacytracker/security/advisories/new
 
 # Encrypted email fallback. Plaintext security reports are NOT accepted —
-# see the policy URL below for the PGP key fingerprint.
+# the OpenPGP key is published via the Encryption field below.
 Contact: mailto:security@privacykey.org
 
-# Full disclosure policy, scope, safe-harbour terms, and what to include
+# OpenPGP key for encrypted reports: the armored key, and its fingerprint.
+Encryption: https://github.com/AdamXweb.gpg
+Encryption: openpgp4fpr:54BFCE808324E569FB1919B304AAA3CBD117D9B2
+
+# Full disclosure policy, scope, safe-harbor terms, and what to include
 # in a report — please read this before submitting.
 Policy: https://github.com/privacykey/.github/blob/main/SECURITY.md
-
-# Researchers who reported confirmed issues are credited in the
-# "Hall of fame" section of the per-product policy and on the
-# corresponding GitHub advisory.
-Acknowledgments: https://github.com/privacykey/.github/blob/main/SECURITY.md#hall-of-fame
 
 # Canonical location for this file
 Canonical: https://privacykey.org/.well-known/security.txt
@@ -34,6 +33,6 @@ Canonical: https://privacykey.org/.well-known/security.txt
 # Languages we can respond in
 Preferred-Languages: en
 
-# Expires one year from "Last updated" — refresh annually. RFC 9116
+# Expires one year from the previous revision — refresh annually. RFC 9116
 # requires this; clients (and bug-bounty platforms) reject expired files.
 Expires: 2027-04-26T00:00:00Z
