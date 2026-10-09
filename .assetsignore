@@ -16,3 +16,10 @@ wrangler.jsonc
 .assetsignore
 .gitignore
 .github
+
+# Estate baseline (2026-10), kept in step across every site repo.
+.wrangler/
+.DS_Store
+.env*
+wrangler.json*
+node_modules/
