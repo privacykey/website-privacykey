@@ -5,3 +5,12 @@
 
 /security.txt
   Content-Type: text/plain; charset=utf-8
+
+# Uptime probe: Blackbox fetches /offgrid every minute and expects "runner".
+# A small fixed file, so the check does not change when pages are edited, and
+# an exact body match proves this site answered rather than a parked page or
+# an error page. Typed and uncached so every probe reaches the asset store.
+/offgrid
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: no-cache, max-age=0, must-revalidate
+  X-Robots-Tag: noindex
